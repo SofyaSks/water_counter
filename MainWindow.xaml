@@ -1,0 +1,59 @@
+﻿<Window x:Class="water_counter.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:water_counter"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" FontSize="24" ResizeMode="NoResize" >
+
+    <!--<Window.DataContext>
+        <local:Counter 
+            Maker="Water.Co"
+            Model="Good"
+            SerialID="116"
+            lastCheck="09.05.2022"
+            hotWater="True"/>
+    </Window.DataContext>-->
+
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Column="0">
+            <TextBlock Margin="10"> Производитель</TextBlock>
+            <TextBlock Margin="10"> Модель</TextBlock>
+            <TextBlock Margin="10"> Серийный номер</TextBlock>
+            <TextBlock Margin="10"> Дата последней проверки</TextBlock>
+            <TextBlock Margin="10"> Предназначен для горячей воды</TextBlock>
+        </StackPanel>
+
+        <StackPanel Grid.Column="1">
+            <TextBox x:Name="MakerTB" Margin="10" MinWidth="200" Width="auto"
+                    Text="{Binding Maker, Mode=TwoWay}" />
+            <TextBox x:Name="ModelTB" Margin="10" Width="auto" 
+                     Text="{Binding Model, Mode=TwoWay}"/>
+            <TextBox x:Name="IdTB" Margin="10" Width="auto" 
+                     Text="{Binding SerialID, Mode=TwoWay}"/>
+            <TextBox x:Name="lastCheckTB" Margin="10" Width="auto" 
+                     Text="{Binding lastCheck, Mode=TwoWay}"/>
+            <CheckBox x:Name="hotWaterChB" Margin="10" 
+                      IsChecked="{Binding hotWater, Mode=TwoWay}">да</CheckBox>
+        </StackPanel>
+
+
+        <DockPanel Grid.Column="1" Grid.Row="1">
+            <Button Click="SaveButton_Click" Margin="10" Width="100" Height="50" FontSize="16">Сохранить</Button>
+            <Button Click="ExitButton_Click" Margin="10" Width="100" Height="50" FontSize="16">Выйти</Button>
+        </DockPanel>
+
+
+    </Grid>
+</Window>
