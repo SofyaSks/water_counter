@@ -4,17 +4,21 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:water_counter"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800" FontSize="24" ResizeMode="NoResize" >
 
-    <!--<Window.DataContext>
+    <Window.DataContext>
         <local:Counter 
             Maker="Water.Co"
             Model="Good"
-            SerialID="116"
-            lastCheck="09.05.2022"
-            hotWater="True"/>
-    </Window.DataContext>-->
+            SerialID="116"            
+            hotWater="True">
+            <local:Counter.lastCheck>
+                <sys:DateTime>2023-06-08</sys:DateTime>
+            </local:Counter.lastCheck>
+        </local:Counter>
+    </Window.DataContext>
 
 
     <Grid>
@@ -42,8 +46,8 @@
                      Text="{Binding Model, Mode=TwoWay}"/>
             <TextBox x:Name="IdTB" Margin="10" Width="auto" 
                      Text="{Binding SerialID, Mode=TwoWay}"/>
-            <TextBox x:Name="lastCheckTB" Margin="10" Width="auto" 
-                     Text="{Binding lastCheck, Mode=TwoWay}"/>
+            <DatePicker  x:Name="lastCheckTB" Margin="10" Width="auto" 
+                     SelectedDate="{Binding lastCheck, Mode=TwoWay}"/>
             <CheckBox x:Name="hotWaterChB" Margin="10" 
                       IsChecked="{Binding hotWater, Mode=TwoWay}">да</CheckBox>
         </StackPanel>

@@ -12,7 +12,7 @@ namespace water_counter
         public string Maker { get; set; }
         public string Model { get; set; }
         public int SerialID { get; set; }
-        public string lastCheck { /*get { return date.ToShortDateString(); } set { }*/ get; set; }
+        public DateTime lastCheck { /*get { return date.ToShortDateString(); } set { }*/ get; set; }
         public bool hotWater { get; set; }
     }
 }

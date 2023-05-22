@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.IO;
 
 namespace water_counter
 {
@@ -27,14 +28,14 @@ namespace water_counter
             // string str = c.date.ToShortDateString();
             // lastCheckTB.Text = str;
 
-            this.DataContext = new Counter
+            /*this.DataContext = new Counter
             {
                 Maker = "Water.Co",
                 Model = "Great",
                 SerialID = 116,
-                lastCheck = "12.09.2023",
+                lastCheck = (12.09.2023),
                 hotWater = true
-            };
+            };*/
 
             
 
@@ -49,6 +50,7 @@ namespace water_counter
         {
             MessageBox.Show($"You made following changes:\nПроизводитель: { MakerTB.Text }\nМодель: {ModelTB.Text}\n" +
                 $"Серийный номер: {IdTB.Text}\nДата последней проверки: {lastCheckTB.Text}\nПредназначен для горячей воды: {hotWaterChB.IsChecked}");
+
 
         }
     }
